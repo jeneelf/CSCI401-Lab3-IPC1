@@ -24,7 +24,7 @@ int main(int argc, char **argv)
     if (pid1 == 0) {
         dup2(pipe1[0], STDIN_FILENO); 
         close(pipe1[1]); 
-        dup2(pipe2[1], STDOUT_FILENO); // Send output to the next pipe
+        dup2(pipe2[1], STDOUT_FILENO); 
         close(pipe2[0]); 
 
         char *grep_args[] = {"grep", argv[1], NULL};
